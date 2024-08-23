@@ -128,7 +128,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         b_name = raw_text0
         
-   await editable.edit("**Enter Video Resolution**")
+    await editable.edit("**Enter Video Resolution**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -150,7 +150,7 @@ async def txt_handler(bot: Client, m: Message):
     except Exception:
             res = "NA"
                                                                                                                                                             
-     await editable.edit("**Enter Your Name or send `de` for use default or** skip ")
+    await editable.edit("**Enter Your Name or send `de` for use default or** skip ")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
