@@ -6,7 +6,8 @@ import json
 from pyrogram import Client, filters
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram.errors import FloodWait                                                                                                                   from pyromod import listen
+from pyrogram.errors import FloodWait
+from pyromod import listen
 from pyrogram.types import Message
 from pyrogram import Client, filters
 from p_bar import progress_bar
@@ -36,7 +37,8 @@ bot = Client(
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
-    workers=8,                                                                                                                                          )
+    workers=8,
+)
 
 
 @bot.on_message(filters.command(["start"]) & filters.chat(sudo_group))
@@ -50,7 +52,8 @@ async def account_login(bot: Client, m: Message):
 
         "➠𝐔𝐬𝐞 /start to start the bot\n"
         "➠𝐔𝐬𝐞 /stop to stop the bot\n"
-        "➠𝐔𝐬𝐞 /txt for txt file to video from bot\n"                                                                                                            "➠𝐔𝐬𝐞 /restart to restart the bot\n"
+        "➠𝐔𝐬𝐞 /txt for txt file to video from bot\n"
+        "➠𝐔𝐬𝐞 /restart to restart the bot\n"
     )
 
     editable = await m.reply_text(welcome_message + additional_commands)
