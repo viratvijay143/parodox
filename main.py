@@ -257,10 +257,10 @@ async def txt_handler(bot: Client, m: Message):
                             count += 1
                             os.remove(f'{name}.pdf')
                         except FloodWait as e:                                                                                                                                    
-                        await bot.send_message(chat_id=int(chat_id), text=str(e))                                                                                               
-                        time.sleep(e.x)
+                            await bot.send_message(chat_id=int(chat_id), text=str(e))                                                                                               
+                            time.sleep(e.x)
                             continue                                                                                                                                       
-                             else:                                                                                                                                                       
+                        else:                                                                                                                                                     
                              prog = await bot.send_message(chat_id=int(chat_id), text=f"**Downloading....**\n\n** {name}")
                         res_file = await helper.download_video(url, cmd, name)
                         filename = res_file
