@@ -37,8 +37,9 @@ bot = Client(
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
-    workers=8,
-)
+    workers=8,                                                                                                               
+   
+     )
 
 
 @bot.on_message(filters.command(["start"]) & filters.chat(sudo_group))
@@ -52,7 +53,7 @@ async def account_login(bot: Client, m: Message):
 
         "➠𝐔𝐬𝐞 /start to start the bot\n"
         "➠𝐔𝐬𝐞 /stop to stop the bot\n"
-        "➠𝐔𝐬𝐞 /txt for txt file to video from bot\n"
+        "➠𝐔𝐬𝐞 /txt for txt file to video from bot\n"                                                                                                            
         "➠𝐔𝐬𝐞 /restart to restart the bot\n"
     )
 
@@ -148,7 +149,8 @@ async def txt_handler(bot: Client, m: Message):
             res = "NA"
     except Exception:
             res = "NA"
-                                                                                                                                                            await editable.edit("**Enter Your Name or send `de` for use default or** skip ")
+                                                                                                                                                            
+     await editable.edit("**Enter Your Name or send `de` for use default or** skip ")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -254,8 +256,12 @@ async def txt_handler(bot: Client, m: Message):
                             copy = await bot.send_document(chat_id=int(chat_id), document=f'{name}.pdf', caption=cc1)
                             count += 1
                             os.remove(f'{name}.pdf')
-                        except FloodWait as e:                                                                                                                                      await bot.send_message(chat_id=int(chat_id), text=str(e))                                                                                               time.sleep(e.x)
-                            continue                                                                                                                                        else:                                                                                                                                                       prog = await bot.send_message(chat_id=int(chat_id), text=f"**Downloading....**\n\n** {name}")
+                        except FloodWait as e:                                                                                                                                    
+                        await bot.send_message(chat_id=int(chat_id), text=str(e))                                                                                               
+                        time.sleep(e.x)
+                            continue                                                                                                                                       
+                             else:                                                                                                                                                       
+                             prog = await bot.send_message(chat_id=int(chat_id), text=f"**Downloading....**\n\n** {name}")
                         res_file = await helper.download_video(url, cmd, name)
                         filename = res_file
                         await prog.delete(True)
