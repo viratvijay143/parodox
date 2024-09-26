@@ -154,7 +154,7 @@ async def txt_handler(bot: Client, m: Message):
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
-    if raw_text3 == 'de':
+    if raw_text3 == 'd':
         CR = credit
     elif raw_text3 == 'skip':
         CR = ''
@@ -171,8 +171,8 @@ async def txt_handler(bot: Client, m: Message):
     input69 = message = await bot.listen(editable.chat.id)
     chat_id = input69.text
     await input69.delete(True)
-    if chat_id == 'de':
-        chat_id = -1002039079581
+    if chat_id == 'd':
+        chat_id = -1002116155974
     else:
         chat_id = chat_id
 
@@ -182,7 +182,7 @@ async def txt_handler(bot: Client, m: Message):
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
         thumb = "thumb.jpg"
     else:
-        thumb == "no"
+        thumb == "n"
 
     if len(links) == 1:
         count = 1
